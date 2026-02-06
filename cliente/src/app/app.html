@@ -1,0 +1,27 @@
+<div style="text-align: center; font-family: sans-serif; margin-top: 40px;">
+
+  <h1>Sistema de Gestión de Empleados</h1>
+
+  <div style="border: 1px solid #ccc; display: inline-block; padding: 20px; border-radius: 10px;">
+    <h3>Consultar Empleado</h3>
+    <input type="number" [(ngModel)]="idBusqueda" placeholder="ID (ej: 1)" style="padding: 5px;">
+    <button (click)="buscarEmpleado()" style="padding: 5px 15px; margin-left: 10px; cursor: pointer;">
+      Buscar
+    </button>
+  </div>
+
+  <br><br>
+
+  <div *ngIf="empleado"
+    style="background-color: #d4edda; padding: 15px; display: inline-block; border-radius: 5px; border: 1px solid #c3e6cb;">
+    <h2 style="color: #155724;">Datos Encontrados</h2>
+    <p><strong>Nombre:</strong> {{ empleado.nombre }}</p>
+    <p><strong>Cargo:</strong> {{ empleado.cargo }}</p>
+    <p><strong>Departamento:</strong> {{ empleado.departamento }}</p>
+  </div>
+
+  <div *ngIf="!empleado && mensaje" style="color: red; font-weight: bold; margin-top: 20px;">
+    {{ mensaje }}
+  </div>
+
+</div>
